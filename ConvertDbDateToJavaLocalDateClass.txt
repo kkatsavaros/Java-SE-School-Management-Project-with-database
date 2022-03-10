@@ -1,0 +1,28 @@
+// Μετατροπή ενός Date της βάσης δεδομένων σε LocalDate.
+
+ while(rs.next()){
+	//Για κάθε μία εγγραφή φτιάξε μου ένα αντικείμενο Courses.
+        Courses c=new Courses(
+        	rs.getString("CTitle"),
+                rs.getString("CStream"),
+                rs.getString("CType"),
+                rs.getDate("CStart_Date").toLocalDate(), // Μετατροπή του Date της MySQL, σε LocalDate.
+                rs.getDate("CEnd_Date").toLocalDate()    // Μετατροπή του Date της MySQL, σε LocalDate.
+        );
+}
+
+		rs.getTimestamp("ASubDateTime").toLocalDateTime(), //Τι μάθημα κάνει.
+-------------------------------------------------------------------------------------------------------
+// Μετατροπή ενός String σε LocalDate για insert σε βάση δεδομένων.
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        
+LocalDate StartDate = LocalDate.parse(courseStartDate, formatter);
+LocalDate EndDate = LocalDate.parse(courseEndDate, formatter);
+        
+
+CoursesDAOInterface cDAOCourses=new CoursesDAOImplementation();        
+Courses c=new Courses(courseTitle,courseStream,courseType,StartDate,EndDate);
+cDAOCourses.insertCourses(c);
+
+------------------------------------------------------------------------------------------------------
