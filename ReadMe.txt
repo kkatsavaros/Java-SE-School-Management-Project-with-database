@@ -1,3 +1,6 @@
+Java-SE-School-Management-Project-with-database
+
+
 1. This is a Java Standard Edition School Management Programm with Database.
 
 It is a very good project for a Java student to get familiar with Java Object Oriented Programmming.
